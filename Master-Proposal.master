@@ -1,0 +1,285 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master-Proposal.master.cs"
+    Inherits="Master_Proposal" %>
+
+<!doctype html>
+<html class="no-js" lang="">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Proposal | Didgigo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="" href="">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- extended css -->
+    <link href="css/didgigo-proposal.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src='<%# ResolveUrl("~/js/vendor/modernizr-2.8.3.min.js") %>'></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- CONTENT here -->
+    <form id="form1" runat="server">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-didgigo-green">
+      <div class="container">
+      
+
+                <div class="navbar-header">
+                 
+                  
+                
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  
+                  <!-- collapsed my account help -->
+                  <div class="collapsed-helpers dropdown">
+                     <a href="#" data-toggle="dropdown" class="dropdown-toggle"><asp:Image ID="collapsedPeopleImage" runat="server" ImageUrl="img/people-icon.png" Width="17" Height="17"></asp:Image><i class="fa fa-angle-down"></i></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="#">Hi <asp:LoginName ID="LoginName1" runat="server"></asp:LoginName>! : </a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another Action</a></li>
+                            <li class="divider"></li>
+                            <li>
+                                </i><asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="logoutlink" />
+                            </li>
+                        </ul>
+                     <a href="#"><asp:Image ID="collapsedHelpImage" runat="server" ImageUrl="img/help-icon-white.png" Width="19" Height="19"></asp:Image></a>
+                  </div>
+                  
+                  
+                  <a class="navbar-brand" href="#"><asp:Image ID="aspDidgigoBrand" ImageUrl="img/didgigo-logo-white.png" runat="server"></asp:Image></a>
+                </div>
+                
+                <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                    <li><a href="Proposal.aspx" class="text-uppercase">Proposal</i></a></li>
+                    <li><a href="Company.aspx" class="text-uppercase">Company</a></li>
+                    <li><a href="Agent.aspx" class="text-uppercase">Agent</a></li>
+                    <li><a href="People.aspx" class="text-uppercase">People</a></li>
+                  </ul>
+                  
+                  <!-- my account right -->
+                  
+                  <ul class="nav-helper">
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                            <span class="sr-only">(current)</span><asp:Image ID="navHelperPeopleImage" runat="server" ImageUrl="img/people-icon.png" Width="17" Height="17"></asp:Image><span class="overtext">My Account</span><i class="myaccount fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a href="#">Hi <asp:LoginName ID="LoginNameMaster" runat="server"></asp:LoginName>!</a></li>
+                        <li><a data-target="#"><asp:Label CssClass="curRole" ID="curRole" runat="server" Text="Label"></asp:Label></a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another Action</a></li>
+                            <li class="divider"></li>
+                            <li>
+                                </i><asp:LoginStatus ID="LoginStatusMaster" runat="server" CssClass="logoutlink" />
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><asp:Image ID="navHelperHelpImage" runat="server" ImageUrl="img/help-icon-white.png" Width="19" Height="19"></asp:Image><span class="overtext">Help</span></a></li>
+                  </ul><!-- close nav helper -->
+                  
+                  <!-- search bar  -->
+                  <div class="form-container">
+                      
+                        <div class="input-group">
+                            <asp:TextBox ID="searchTextbox" runat="server" CssClass="form-control didgigo-form-control"></asp:TextBox>
+                            <div class="input-group-btn">
+                                <button onserverclick="btnSearchClicked" class="btn-blue" type="submit" runat="server"><i class="fa fa-angle-right"></i></button>
+                            </div>
+                        </div>
+                     
+                  </div><!-- clsoe form container -->
+                  
+                  
+                </div><!--/.nav-collapse -->
+        
+        
+      </div>
+    </nav>
+    <!-- Page Function Part -->
+    <div id="page-function-wrapper">
+        <div class="container">
+            <div class="page-function-row">
+                <div class="page-function">
+                    <!-- col sm 12 -->
+                    <asp:ContentPlaceHolder ID="pageFunction" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <!-- ./ page function -->
+            </div>
+            <!-- ./ close wrapper -->
+        </div>
+        <!-- ./close container -->
+    </div>
+    <!-- close page function wrapper -->
+    <div class="wrapper container">
+        <div class="main-content">
+            <div class="menu-container">
+                <div class="menu">
+                    <div class="page-title">
+                        <h1>
+                            <asp:ContentPlaceHolder ID="cphMenuTitle" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </h1>
+                    </div>
+                    <div class="menu-buttons">
+                        <div>
+                            <asp:ContentPlaceHolder ID="cphMenuButtons" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <hr />
+                    </div>
+                </div>
+            </div>
+            <!-- ./close menu container -->
+            <div id="sidebarID" class="sidebar" runat="server">
+                <div>
+                    <span class="filter-header">Filters</span>
+                    <hr />
+                    <div>
+                        <asp:ContentPlaceHolder ID="cphSidebar" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <div class="sidebar-toggle-btn">
+                        <i class="fa fa-caret-left"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- ./ END sidebar -->
+            <div id="contentID" class="content" runat="server">
+                <div>
+                    <asp:ContentPlaceHolder ID="cphContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+        <!-- close main wrap -->
+    </div>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <script>        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+
+    <script src='<%= ResolveUrl("~/js/bootstrap.min.js") %>'></script>
+
+    <!-- nav menu -->
+
+    <script>
+        $(document).ready(function()
+        {
+            //active navs
+            var str = location.href.toLowerCase();
+            $('#navbar ul.nav li a').each(function()
+            {
+                if (str.indexOf($(this).attr('href').toLowerCase()) > -1)
+                {
+                    $('li.active').removeClass("active");
+                    $(this).parent().addClass("active didgigo-active");
+                }
+
+
+            }); //end navbar each
+
+        }); //end doc ready
+    </script>
+
+    <script>
+        $(function()
+        {
+            $('.filters-accordion').accordion({
+                header: "> .filterWrap > h3",
+                collapsible: true,
+                heightStyle: "content",
+
+                beforeActivate: function(event, ui)
+                {
+                    // The accordion believes a panel is being opened
+                    if (ui.newHeader[0])
+                    {
+                        var currHeader = ui.newHeader;
+                        var currContent = currHeader.next('.ui-accordion-content');
+                        // The accordion believes a panel is being closed
+                    } else
+                    {
+                        var currHeader = ui.oldHeader;
+                        var currContent = currHeader.next('.ui-accordion-content');
+                    }
+                    // Since we've changed the default behavior, this detects the actual status
+                    var isPanelSelected = currHeader.attr('aria-selected') == 'true';
+
+                    // Toggle the panel's header
+                    currHeader.toggleClass('ui-corner-all', isPanelSelected).toggleClass('accordion-header-active ui-state-active ui-corner-top', !isPanelSelected).attr('aria-selected', ((!isPanelSelected).toString()));
+
+                    // Toggle the panel's icon
+                    currHeader.children('.ui-icon').toggleClass('ui-icon-triangle-1-e', isPanelSelected).toggleClass('ui-icon-triangle-1-s', !isPanelSelected);
+
+                    // Toggle the panel's content
+                    currContent.toggleClass('accordion-content-active', !isPanelSelected)
+                    if (isPanelSelected) { currContent.slideUp(); } else { currContent.slideDown(); }
+
+                    return false; // Cancel the default action
+                }
+
+            });
+
+
+
+            //sidebar
+            $('.sidebar-toggle-btn').on('click', function()
+            {
+                $('.main-content').toggleClass('hideSidebar');
+
+            });
+
+
+
+
+
+        });
+    </script>
+
+    <!-- place holder script for individual pages -->
+    <asp:ContentPlaceHolder ID="cphCustomScripts" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
+    <script>
+        (function(b, o, i, l, e, r)
+        {
+            b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+            function() { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+            e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+            e.src = 'https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        } (window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X', 'auto'); ga('send', 'pageview');
+
+
+    </script>
+
+</body>
+</html>
