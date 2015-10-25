@@ -26,239 +26,385 @@
     </div>
     <div class="filters-accordion">
         <section class="filterWrap">
-        <h3>
-            Keywords<i class="fa fa-caret-down"></i></h3>
-        <div>
+            <h3>Keywords<i class="fa fa-caret-down"></i></h3>
             <div>
-                <p>
-                    Enter Keywords</p>
-                <asp:TextBox ID="TextboxKeywords" runat="server"></asp:TextBox>
-            </div>
-        </div>
-        </section>
-        <section class="filterWrap">
-        <h3>
-            Date Added<i class="fa fa-caret-down"></i></h3>
-        <div>
-            <div>
-                <div class="sidebar-datePickers">
-                    <div class="item">
-                        From:</div>
-                    <div class="item">
-                        <asp:ImageButton ID="Image1NEW" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
-                            CausesValidation="false" Width="20" /></div>
-                    <div class="item">
-                        <asp:TextBox ID="TextboxDateAddedFrom" runat="server" ReadOnly="true"></asp:TextBox></div>
+                <div>
+                    <p>
+                        Enter Keywords
+                    </p>
+                    <asp:TextBox ID="TextboxKeywords" runat="server"></asp:TextBox>
                 </div>
-                <div class="sidebar-datePickers">
-                    <div class="item">
-                        To:</div>
-                    <div class="item">
-                        <asp:ImageButton ID="ImageButton1" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
-                            CausesValidation="false" Width="20" /></div>
-                    <div class="item">
-                        <asp:TextBox ID="TextboxDateAddedTo" runat="server" ReadOnly="true"></asp:TextBox></div>
+            </div>
+        </section>
+        <section class="filterWrap">
+            <h3>Date Added<i class="fa fa-caret-down"></i></h3>
+            <div>
+                <div>
+                    <div class="sidebar-datePickers">
+                        <div class="item">
+                            From:
+                        </div>
+                        <div class="item">
+                            <asp:ImageButton ID="Image1NEW" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
+                                CausesValidation="false" Width="20" />
+                        </div>
+                        <div class="item">
+                            <asp:TextBox ID="TextboxDateAddedFrom" runat="server" ReadOnly="true"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="sidebar-datePickers">
+                        <div class="item">
+                            To:
+                        </div>
+                        <div class="item">
+                            <asp:ImageButton ID="ImageButton1" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
+                                CausesValidation="false" Width="20" />
+                        </div>
+                        <div class="item">
+                            <asp:TextBox ID="TextboxDateAddedTo" runat="server" ReadOnly="true"></asp:TextBox>
+                        </div>
+                    </div>
+                    <AjaxControlToolkit:CalendarExtender ID="CalendarExtender1NEW" runat="server" PopupButtonID="Image1NEW"
+                        TargetControlID="TextboxDateAddedFrom">
+                    </AjaxControlToolkit:CalendarExtender>
+                    <AjaxControlToolkit:CalendarExtender ID="CalendarExtender1" runat="server" PopupButtonID="ImageButton1"
+                        TargetControlID="TextboxDateAddedTo">
+                    </AjaxControlToolkit:CalendarExtender>
                 </div>
-                <AjaxControlToolkit:CalendarExtender ID="CalendarExtender1NEW" runat="server" PopupButtonID="Image1NEW"
-                    TargetControlID="TextboxDateAddedFrom">
-                </AjaxControlToolkit:CalendarExtender>
-                <AjaxControlToolkit:CalendarExtender ID="CalendarExtender1" runat="server" PopupButtonID="ImageButton1"
-                    TargetControlID="TextboxDateAddedTo">
-                </AjaxControlToolkit:CalendarExtender>
             </div>
-        </div>
         </section>
         <section class="filterWrap">
-        <h3>
-            Date Updated<i class="fa fa-caret-down"></i></h3>
-        <div>
+            <h3>Date Updated<i class="fa fa-caret-down"></i></h3>
             <div>
-                <div class="sidebar-datePickers">
-                    <div class="item">
-                        From:</div>
-                    <div class="item">
-                        <asp:ImageButton ID="ImageButton2" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
-                            CausesValidation="false" Width="20" /></div>
-                    <div class="item">
-                        <asp:TextBox ID="TextboxDateUpdatedFrom" runat="server" ReadOnly="true"></asp:TextBox></div>
+                <div>
+                    <div class="sidebar-datePickers">
+                        <div class="item">
+                            From:
+                        </div>
+                        <div class="item">
+                            <asp:ImageButton ID="ImageButton2" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
+                                CausesValidation="false" Width="20" />
+                        </div>
+                        <div class="item">
+                            <asp:TextBox ID="TextboxDateUpdatedFrom" runat="server" ReadOnly="true"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="sidebar-datePickers">
+                        <div class="item">
+                            To:
+                        </div>
+                        <div class="item">
+                            <asp:ImageButton ID="ImageButton3" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
+                                CausesValidation="false" Width="20" />
+                        </div>
+                        <div class="item">
+                            <asp:TextBox ID="TextboxDateUpdatedTo" runat="server" ReadOnly="true"></asp:TextBox>
+                        </div>
+                    </div>
+                    <AjaxControlToolkit:CalendarExtender ID="CalendarExtender2" runat="server" PopupButtonID="ImageButton2"
+                        TargetControlID="TextboxDateUpdatedFrom">
+                    </AjaxControlToolkit:CalendarExtender>
+                    <AjaxControlToolkit:CalendarExtender ID="CalendarExtender3" runat="server" PopupButtonID="ImageButton3"
+                        TargetControlID="TextboxDateUpdatedTo">
+                    </AjaxControlToolkit:CalendarExtender>
                 </div>
-                <div class="sidebar-datePickers">
-                    <div class="item">
-                        To:</div>
-                    <div class="item">
-                        <asp:ImageButton ID="ImageButton3" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
-                            CausesValidation="false" Width="20" /></div>
-                    <div class="item">
-                        <asp:TextBox ID="TextboxDateUpdatedTo" runat="server" ReadOnly="true"></asp:TextBox></div>
+            </div>
+        </section>
+        <section class="filterWrap">
+            <h3>Proposal Company<i class="fa fa-caret-down"></i></h3>
+            <div>
+                <div>
+                    <p>
+                        Select Company
+                    </p>
+                    <asp:DropDownList ID="DDLProposalCompany" runat="server">
+                        <asp:ListItem>A</asp:ListItem>
+                        <asp:ListItem>B</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
-                <AjaxControlToolkit:CalendarExtender ID="CalendarExtender2" runat="server" PopupButtonID="ImageButton2"
-                    TargetControlID="TextboxDateUpdatedFrom">
-                </AjaxControlToolkit:CalendarExtender>
-                <AjaxControlToolkit:CalendarExtender ID="CalendarExtender3" runat="server" PopupButtonID="ImageButton3"
-                    TargetControlID="TextboxDateUpdatedTo">
-                </AjaxControlToolkit:CalendarExtender>
             </div>
-        </div>
         </section>
         <section class="filterWrap">
-        <h3>
-            Proposal Company<i class="fa fa-caret-down"></i></h3>
-        <div>
+            <h3>Proposal Agent<i class="fa fa-caret-down"></i></h3>
             <div>
-                <p>
-                    Select Company</p>
-                <asp:DropDownList ID="DDLProposalCompany" runat="server">
-                    <asp:ListItem>A</asp:ListItem>
-                    <asp:ListItem>B</asp:ListItem>
-                </asp:DropDownList>
+                <div>
+                    <p>
+                        Select Agent
+                    </p>
+                    <asp:DropDownList ID="DDLProposalAgent" runat="server">
+                        <asp:ListItem>A</asp:ListItem>
+                        <asp:ListItem>B</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
             </div>
-        </div>
         </section>
         <section class="filterWrap">
-        <h3>
-            Proposal Agent<i class="fa fa-caret-down"></i></h3>
-        <div>
+            <h3>Proposal Type<i class="fa fa-caret-down"></i></h3>
             <div>
-                <p>
-                    Select Agent</p>
-                <asp:DropDownList ID="DDLProposalAgent" runat="server">
-                    <asp:ListItem>A</asp:ListItem>
-                    <asp:ListItem>B</asp:ListItem>
-                </asp:DropDownList>
+                <div>
+                    <p>
+                        Select Type
+                    </p>
+                    <asp:DropDownList ID="DDLProposalType" runat="server">
+                        <asp:ListItem>A</asp:ListItem>
+                        <asp:ListItem>B</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
             </div>
-        </div>
         </section>
         <section class="filterWrap">
-        <h3>
-            Proposal Type<i class="fa fa-caret-down"></i></h3>
-        <div>
+            <h3>Proposal Status<i class="fa fa-caret-down"></i></h3>
             <div>
-                <p>
-                    Select Type</p>
-                <asp:DropDownList ID="DDLProposalType" runat="server">
-                    <asp:ListItem>A</asp:ListItem>
-                    <asp:ListItem>B</asp:ListItem>
-                </asp:DropDownList>
+                <div>
+                    <p>Select Statuses</p>
+                    <asp:CheckBoxList ID="CheckboxStatuses" runat="server">
+                    </asp:CheckBoxList>
+                </div>
             </div>
-        </div>
-        </section>
-        <section class="filterWrap">
-        <h3>
-            Proposal Status<i class="fa fa-caret-down"></i></h3>
-        <div>
-            <div>
-                <p>Select Statuses</p>
-                <asp:CheckBoxList ID="CheckboxStatuses" runat="server">
-
-                </asp:CheckBoxList>
-            </div>
-        </div>
         </section>
         <section>
-        <h3>
-            Proposal Next Action<i class="fa fa-caret-down"></i></h3>
-        <div>
+            <h3>Proposal Next Action<i class="fa fa-caret-down"></i></h3>
             <div>
-                <p>Select Next Action</p>
-                <asp:CheckBoxList ID="CheckBoxNextAction" runat="server">
-                </asp:CheckBoxList>
+                <div>
+                    <p>Select Next Action</p>
+                    <asp:CheckBoxList ID="CheckBoxNextAction" runat="server">
+                    </asp:CheckBoxList>
+                </div>
             </div>
-        </div>
         </section>
         <section class="filterWrap">
-        <h3>
-            Proposal Start Date<i class="fa fa-caret-down"></i></h3>
-        <div>
+            <h3>Proposal Start Date<i class="fa fa-caret-down"></i></h3>
             <div>
-                <div class="sidebar-datePickers">
-                    <div class="item">
-                        From:</div>
-                    <div class="item">
-                        <asp:ImageButton ID="ImageButton4" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
-                            CausesValidation="false" Width="20" /></div>
-                    <div class="item">
-                        <asp:TextBox ID="TextboxProposalStartDateFrom" runat="server" ReadOnly="true"></asp:TextBox></div>
-                </div>
-                <div class="sidebar-datePickers">
-                    <div class="item">
-                        To:</div>
-                    <div class="item">
-                        <asp:ImageButton ID="ImageButton5" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
-                            CausesValidation="false" Width="20" /></div>
-                    <div class="item">
-                        <asp:TextBox ID="TextboxProposalStartDateTo" runat="server" ReadOnly="true"></asp:TextBox></div>
-                </div>
-                <AjaxControlToolkit:CalendarExtender ID="CalendarExtender4" runat="server" PopupButtonID="ImageButton4"
-                    TargetControlID="TextboxProposalStartDateFrom">
-                </AjaxControlToolkit:CalendarExtender>
-                <AjaxControlToolkit:CalendarExtender ID="CalendarExtender5" runat="server" PopupButtonID="ImageButton5"
-                    TargetControlID="TextboxProposalStartDateTo">
-                </AjaxControlToolkit:CalendarExtender>
-            </div>
-        </div>
-        </section>
-        <section class="filterWrap">
-        <h3>
-            Proposal End Date<i class="fa fa-caret-down"></i></h3>
-        <div>
-            <div>
-                <div class="sidebar-datePickers">
-                    <div class="item">
-                        From:</div>
-                    <div class="item">
-                        <asp:ImageButton ID="ImageButton6" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
-                            CausesValidation="false" Width="20" /></div>
-                    <div class="item">
-                        <asp:TextBox ID="TextboxProposalEndDateFrom" runat="server" ReadOnly="true"></asp:TextBox></div>
-                </div>
-                <div class="sidebar-datePickers">
-                    <div class="item">
-                        To:</div>
-                    <div class="item">
-                        <asp:ImageButton ID="ImageButton7" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
-                            CausesValidation="false" Width="20" /></div>
-                    <div class="item">
-                        <asp:TextBox ID="TextboxProposalEndDateTo" runat="server" ReadOnly="true"></asp:TextBox></div>
-                </div>
-                <AjaxControlToolkit:CalendarExtender ID="CalendarExtender6" runat="server" PopupButtonID="ImageButton6"
-                    TargetControlID="TextboxProposalEndDateFrom">
-                </AjaxControlToolkit:CalendarExtender>
-                <AjaxControlToolkit:CalendarExtender ID="CalendarExtender7" runat="server" PopupButtonID="ImageButton7"
-                    TargetControlID="TextboxProposalEndDateTo">
-                </AjaxControlToolkit:CalendarExtender>
-            </div>
-        </div>
-        </section>
-        <section class="filterWrap">
-        <h3>
-            Proposal Estimated Budget<i class="fa fa-caret-down"></i></h3>
-        <div>
-            <div>
-                <div class="budget-slider-container">
-                    <div id="budget-slider">
+                <div>
+                    <div class="sidebar-datePickers">
+                        <div class="item">
+                            From:
+                        </div>
+                        <div class="item">
+                            <asp:ImageButton ID="ImageButton4" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
+                                CausesValidation="false" Width="20" />
+                        </div>
+                        <div class="item">
+                            <asp:TextBox ID="TextboxProposalStartDateFrom" runat="server" ReadOnly="true"></asp:TextBox>
+                        </div>
                     </div>
-                    <p class="min">
-                        <label for="budgetAmountMin">
-                            Min</label>
-                        <asp:TextBox ID="budgetAmountMin" runat="server" ReadOnly="true"></asp:TextBox>
-                    </p>
-                    <p class="max">
-                        <label for="budgetAmountMax">
-                            Max</label>
-                        <asp:TextBox ID="budgetAmountMax" runat="server" ReadOnly="true"></asp:TextBox>
-                    </p>
+                    <div class="sidebar-datePickers">
+                        <div class="item">
+                            To:
+                        </div>
+                        <div class="item">
+                            <asp:ImageButton ID="ImageButton5" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
+                                CausesValidation="false" Width="20" />
+                        </div>
+                        <div class="item">
+                            <asp:TextBox ID="TextboxProposalStartDateTo" runat="server" ReadOnly="true"></asp:TextBox>
+                        </div>
+                    </div>
+                    <AjaxControlToolkit:CalendarExtender ID="CalendarExtender4" runat="server" PopupButtonID="ImageButton4"
+                        TargetControlID="TextboxProposalStartDateFrom">
+                    </AjaxControlToolkit:CalendarExtender>
+                    <AjaxControlToolkit:CalendarExtender ID="CalendarExtender5" runat="server" PopupButtonID="ImageButton5"
+                        TargetControlID="TextboxProposalStartDateTo">
+                    </AjaxControlToolkit:CalendarExtender>
                 </div>
             </div>
-        </div>
+        </section>
+        <section class="filterWrap">
+            <h3>Proposal End Date<i class="fa fa-caret-down"></i></h3>
+            <div>
+                <div>
+                    <div class="sidebar-datePickers">
+                        <div class="item">
+                            From:
+                        </div>
+                        <div class="item">
+                            <asp:ImageButton ID="ImageButton6" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
+                                CausesValidation="false" Width="20" />
+                        </div>
+                        <div class="item">
+                            <asp:TextBox ID="TextboxProposalEndDateFrom" runat="server" ReadOnly="true"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="sidebar-datePickers">
+                        <div class="item">
+                            To:
+                        </div>
+                        <div class="item">
+                            <asp:ImageButton ID="ImageButton7" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
+                                CausesValidation="false" Width="20" />
+                        </div>
+                        <div class="item">
+                            <asp:TextBox ID="TextboxProposalEndDateTo" runat="server" ReadOnly="true"></asp:TextBox>
+                        </div>
+                    </div>
+                    <AjaxControlToolkit:CalendarExtender ID="CalendarExtender6" runat="server" PopupButtonID="ImageButton6"
+                        TargetControlID="TextboxProposalEndDateFrom">
+                    </AjaxControlToolkit:CalendarExtender>
+                    <AjaxControlToolkit:CalendarExtender ID="CalendarExtender7" runat="server" PopupButtonID="ImageButton7"
+                        TargetControlID="TextboxProposalEndDateTo">
+                    </AjaxControlToolkit:CalendarExtender>
+                </div>
+            </div>
+        </section>
+        <section class="filterWrap">
+            <h3>Proposal Estimated Budget<i class="fa fa-caret-down"></i></h3>
+            <div>
+                <div>
+                    <div class="budget-slider-container">
+                        <div id="budget-slider">
+                        </div>
+                        <p class="min">
+                            <label for="budgetAmountMin">
+                                Min</label>
+                            <asp:TextBox ID="budgetAmountMin" runat="server" ReadOnly="true"></asp:TextBox>
+                        </p>
+                        <p class="max">
+                            <label for="budgetAmountMax">
+                                Max</label>
+                            <asp:TextBox ID="budgetAmountMax" runat="server" ReadOnly="true"></asp:TextBox>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
     <!-- ./ close filters accordion div -->
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="cphContent" runat="Server">
-    <asp:LoginView ID="proposalLoginView" runat="server">
+
+    <%--Panels--%>
+    <div id="PanelContainer" runat="server">
+
+        <!-- SEARCH PROPOSAL PANEL -->
+        <asp:Panel ID="PropSearchPanel" runat="server">
+
+            <asp:GridView ID="GridViewSearchProposal" runat="server">
+            </asp:GridView>
+
+        </asp:Panel>
+
+
+        <!-- ADD PROPOSAL PANEL -->
+        <asp:Panel ID="PropAddPanel" runat="server">
+
+            <asp:MultiView ID="MultiViewProposalAdd" runat="server">
+
+                <asp:View ID="ViewPropAdd1" runat="server">
+
+
+                    <h2>Step 1 : Proposal Basics</h2>
+                    <hr style="height:15px;" />
+
+                    <div class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            <asp:Label CssClass="control-label col-sm-2" ID="labelProposalTitle" AssociatedControlID="txtboxPropTitle" runat="server" Text="Proposal Title"></asp:Label>
+                            <div class="col-sm-6">
+                                <asp:TextBox ID="txtboxPropTitle" CssClass="form-control" Text="" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="col-sm-2"><span style="color: red;">*</span></div>
+                        </div>
+
+                        <div class="form-group">
+                            <asp:Label CssClass="control-label col-sm-2" ID="labelPerson" AssociatedControlID="txtboxPropPerson" runat="server" Text="Person"></asp:Label>
+                            <div class="col-sm-6">
+                                <asp:TextBox ID="txtboxPropPerson" CssClass="form-control" Text="" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="col-sm-1"><span style="color: red;">*</span></div>
+                            <div class="col-sm-3">
+                                <asp:Button ID="btnAddPersonProp" runat="server" CssClass="btn-blue" Text="New" />
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <asp:Label CssClass="control-label col-sm-2" ID="labelTripTemplate" AssociatedControlID="DDLTripTemplate" runat="server" Text="Trip Template"></asp:Label>
+                            <div class="col-sm-6">
+                                <asp:DropDownList ID="DDLTripTemplate" runat="server">
+                                    <asp:ListItem Value="0" Text="-- Select Template (Optional) -- "></asp:ListItem>
+                                    <asp:ListItem Value="1" Text="A"></asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                            <div class="col-sm-2"><span style="color: red;">*</span></div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <asp:Label CssClass="control-label col-sm-2" ID="lblPropCalendarStepOne" AssociatedControlID="txtboxStartDateProposal" runat="server" Text="Calendar"></asp:Label>
+                            <div class="col-sm-4">
+
+                                <asp:ImageButton ID="addpropImageStartDate" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/images/calendar-icon.png"
+                                    CausesValidation="false" Width="20" />
+                                <asp:TextBox ID="txtboxStartDateProposal" runat="server" ReadOnly="true"></asp:TextBox>
+                                <AjaxControlToolkit:CalendarExtender ID="CalendarExtender8" runat="server" PopupButtonID="addpropImageStartDate"
+                                    TargetControlID="txtboxStartDateProposal">
+                                </AjaxControlToolkit:CalendarExtender>
+
+                            </div>
+                            <div class="col-sm-2"><span style="color: red;">*</span></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <asp:Button ID="btnStepOneCreate" runat="server" CssClass="btn-green" Text="Create" OnClick="btnStepOneCreate_Click" />
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                    <!-- end ./ form horizontal -->
+
+                </asp:View>
+                <!-- ./ end step one -->
+
+                <asp:View ID="ViewPropAdd2" runat="server">
+                    <h2>Step 2 : Trip Planning</h2>
+                    <hr />
+                    <asp:Button ID="btnStepTwoBack" CssClass="btn-gray" runat="server" Text="Back" OnClick="btnStepTwoBack_Click" />
+                    <asp:Button ID="btnStepTwoSkip" CssClass="btn-gray" runat="server" Text="Skip" />
+
+
+
+
+                </asp:View>
+
+            </asp:MultiView>
+
+
+        </asp:Panel>
+
+
+        <!-- PROPOSAL SETTINGS PANEL -->
+        <asp:Panel ID="PropSettingPanel" runat="server">
+            <p>
+                Prop Setting
+            </p>
+        </asp:Panel>
+        <!-- PRINT TEMPLATES PANEL -->
+        <asp:Panel ID="PropPrintPanel" runat="server">
+            <p>
+                Print
+            </p>
+        </asp:Panel>
+        <!-- PROPOSAL TRIP TEMPLATES PANEL -->
+        <asp:Panel ID="PropTripPanel" runat="server">
+            <p>
+                Trip
+            </p>
+        </asp:Panel>
+    </div>
+    <!-- ./ close div panel container -->
+
+
+     <asp:LoginView ID="proposalLoginView" runat="server">
         <LoggedInTemplate>
-            <h3>
-                User Name :
+
+            <hr style="padding-top:25px;"/>
+
+            <h3 style="font-size: 11px;">User Name :
                 <asp:LoginName ID="LoginName1" runat="server"></asp:LoginName>
             </h3>
         </LoggedInTemplate>
@@ -267,7 +413,7 @@
         </AnonymousTemplate>
     </asp:LoginView>
     <!-- get user info -->
-    <div>
+    <div style="font-size: 11px;">
         <asp:Literal ID="Literal1" runat="server">
             <div style="background:red;">
                 <p>Agent Role - </p>
@@ -276,55 +422,17 @@
         </asp:Literal>
     </div>
     <hr />
-    
-    <%--Panels--%>
-    <div id="PanelContainer" runat="server">
-    
-        <!-- SEARCH PROPOSAL PANEL -->
-        <asp:Panel ID="PropSearchPanel" runat="server">
-            
-            <asp:GridView ID="GridViewSearchProposal" runat="server">
-            </asp:GridView>
-            
-        </asp:Panel>
-        
-        
-        <!-- ADD PROPOSAL PANEL -->
-        <asp:Panel ID="PropAddPanel" runat="server">
-            <h1>
-                Step 1 : Proposal Basics</h1>
-            <hr />
-        </asp:Panel>
-        <!-- PROPOSAL SETTINGS PANEL -->
-        <asp:Panel ID="PropSettingPanel" runat="server">
-            <p>
-                Prop Setting</p>
-        </asp:Panel>
-        <!-- PRINT TEMPLATES PANEL -->
-        <asp:Panel ID="PropPrintPanel" runat="server">
-            <p>
-                Print</p>
-        </asp:Panel>
-        <!-- PROPOSAL TRIP TEMPLATES PANEL -->
-        <asp:Panel ID="PropTripPanel" runat="server">
-            <p>
-                Trip</p>
-        </asp:Panel>
-    </div>
-    <!-- ./ close div panel container -->
+
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="cphCustomScripts" runat="Server">
 
     <script>
-        $(function()
-        {
+        $(function () {
             //jQuery code here
 
 
-            $('.filters-accordion input:text').keypress(function(event)
-            {
-                if (event.keyCode == 13)
-                {
+            $('.filters-accordion input:text').keypress(function (event) {
+                if (event.keyCode == 13) {
                     return false;
                 }
 
@@ -338,22 +446,18 @@
                 min: minV,
                 max: maxV,
                 values: [75, 9999],
-                slide: function(event, ui)
-                {
+                slide: function (event, ui) {
                     $("#<%= budgetAmountMin.ClientID %>").val(ui.values[0]);
                     $("#<%= budgetAmountMax.ClientID %>").val(ui.values[1]);
                 }
             });
 
-            $("#<%= budgetAmountMin.ClientID %>").on("keyup", function(e)
-            {
-                if (this.value > maxV)
-                {
+            $("#<%= budgetAmountMin.ClientID %>").on("keyup", function (e) {
+                if (this.value > maxV) {
                     this.value = maxV;
                 }
 
-                if (this.value < minV)
-                {
+                if (this.value < minV) {
                     this.value = minV;
                 }
 
@@ -361,15 +465,12 @@
                 $("#budget-slider").slider("values", 0, this.value);
             });
 
-            $("#<%= budgetAmountMax.ClientID %>").on("keyup", function(e)
-            {
-                if (this.value > maxV)
-                {
+            $("#<%= budgetAmountMax.ClientID %>").on("keyup", function (e) {
+                if (this.value > maxV) {
                     this.value = maxV;
                 }
 
-                if (this.value < minV)
-                {
+                if (this.value < minV) {
                     this.value = minV;
                 }
 

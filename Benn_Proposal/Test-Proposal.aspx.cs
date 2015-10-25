@@ -46,7 +46,7 @@ public partial class Test_Proposal : System.Web.UI.Page
         string currentUserID = Membership.GetUser().ProviderUserKey.ToString();
 
         //get role
-        appSession.UsersRole = System.Web.Security.Roles.GetRolesForUser(appSession.UsersUsername).Single();
+        appSession.UsersRole = System.Web.Security.Roles.GetRolesForUser(appSession.UsersUsername).FirstOrDefault();
 
         ////////////////////
         //get agent company
@@ -66,7 +66,7 @@ public partial class Test_Proposal : System.Web.UI.Page
                           where b.Agent_GUID == guiduserId
                           select new { c.Company_Name };
 
-        if (userCompany.Count() != 0)
+        if (userCompany.Any())
         {
             appSession.CurrentlySelectedCompany = userCompany.Single().ToString();
         }
@@ -76,7 +76,16 @@ public partial class Test_Proposal : System.Web.UI.Page
             // or other
             switch (appSession.UsersRole)
             {
-                case "System_Manager": appSession.CurrentlySelectedCompany = appSession.UsersRole + " = god mode can add proposal to any company";
+                case "System_Manager":
+                    appSession.CurrentlySelectedCompany = appSession.UsersRole + " = god mode can add proposal to any company";
+                    break;
+
+                case "Proposal_Agent":
+                    appSession.CurrentlySelectedCompany = appSession.UsersRole + " = THIS USER HAS NO COMPANY YET: Proposal agent can add a proposal to ITS OWN company";
+                    break;
+
+                case "Company_Admin":
+                    appSession.CurrentlySelectedCompany = appSession.UsersRole + " = THIS USER HAS NO COMPANY YET: Company Admin can add proposal to ITS OWN company";
                     break;
 
                 default:
@@ -144,18 +153,38 @@ public partial class Test_Proposal : System.Web.UI.Page
         // will change this later as switch statemtns if number of types of users increase
 
 
-        if (userRole == "Proposal_Agent")
+        switch (userRole)
         {
-            MainAddProposal();
 
-            CompanyRadioBtnList.SelectedValue = "AddProp";
-        }
-        else
-        {
-            MainSearchProposal();
-            CompanyRadioBtnList.SelectedValue = "SearchProp";
+            case "Proposal_Agent":
+                {
+                    MainAddProposal();
+                    CompanyRadioBtnList.SelectedValue = "AddProp";
+                    break;
+                }
+
+            case "System_Manager":
+                {
+                    MainSearchProposal();
+                    CompanyRadioBtnList.SelectedValue = "SearchProp";
+                    break;
+                }
+
+            case "Company_Admin":
+                {
+                    MainSearchProposal();
+                    CompanyRadioBtnList.SelectedValue = "SearchProp";
+                    break;
+                }
+
+            default:
+                {
+                    MainOTHERTEMPLATE();
+                    break;
+                }
 
         }
+
     }
 
 
@@ -188,6 +217,15 @@ public partial class Test_Proposal : System.Web.UI.Page
             case "Company_Admin":
                 CompanyRadioBtnList.Items[0].Attributes.CssStyle.Add("display", "none");
                 CompanyRadioBtnList.Items[1].Attributes.CssStyle.Add("display", "inline");
+                CompanyRadioBtnList.Items[2].Attributes.CssStyle.Add("display", "none");
+                CompanyRadioBtnList.Items[3].Attributes.CssStyle.Add("display", "none");
+                CompanyRadioBtnList.Items[4].Attributes.CssStyle.Add("display", "none");
+                break;
+
+
+            default:
+                CompanyRadioBtnList.Items[0].Attributes.CssStyle.Add("display", "none");
+                CompanyRadioBtnList.Items[1].Attributes.CssStyle.Add("display", "none");
                 CompanyRadioBtnList.Items[2].Attributes.CssStyle.Add("display", "none");
                 CompanyRadioBtnList.Items[3].Attributes.CssStyle.Add("display", "none");
                 CompanyRadioBtnList.Items[4].Attributes.CssStyle.Add("display", "none");
@@ -294,6 +332,17 @@ public partial class Test_Proposal : System.Web.UI.Page
 
                 currentPanelShown = "TripTemplates";
                 break;
+
+            case "none":
+                {
+                    CompanyRadioBtnList.Visible = false;
+
+                    PanelContainer.Visible = false;
+
+                    break;
+                }
+
+            default: break;
         }
 
     }
@@ -306,6 +355,9 @@ public partial class Test_Proposal : System.Web.UI.Page
         Titlelbl.Text = "Add Proposal";
         ShowPanel("prop-add");
         sidebarAction("hide");
+
+        //multiviews
+        MultiViewProposalAdd.ActiveViewIndex = 0;
 
     }
 
@@ -345,6 +397,13 @@ public partial class Test_Proposal : System.Web.UI.Page
         ShowPanel("trip-templates");
         sidebarAction("hide");
 
+    }
+
+    private void MainOTHERTEMPLATE()
+    {
+        Titlelbl.Text = "UNAUTHORIZED";
+        ShowPanel("none");
+        sidebarAction("hide");
     }
 
 
@@ -632,5 +691,15 @@ public partial class Test_Proposal : System.Web.UI.Page
             case "PrintTemp": MainPrintTemplates(); break;
             case "TripTemp": MainTripTemplates(); break;
         }
+    }
+
+    protected void btnStepOneCreate_Click(object sender, EventArgs e)
+    {
+        MultiViewProposalAdd.ActiveViewIndex = 1;
+    }
+
+    protected void btnStepTwoBack_Click(object sender, EventArgs e)
+    {
+        MultiViewProposalAdd.ActiveViewIndex = 0;
     }
 }
